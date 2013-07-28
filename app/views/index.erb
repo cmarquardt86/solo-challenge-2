@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>4-Evernote</h1>
+  <h2>The Knock-Off...</h2>
+  <h3>Create a note:</h3>
+  <form action="/notes" method="post"><br><br>
+    Title:<input type="text" name="title"><br><br>
+    Content:<input type="text" name="content"><br><br>
+    <input type="submit" value="Add note">
+  </form>
+<br>
+<h3>My Notes:</h3>
+<ul>
+  <% @notes.each do |note| %>
+  <li><a href="/notes/<%= note.id %>"><%= note.title %> - <%= note.content %></a></li>
+  <% end %>
+</ul>
+
+</div>
